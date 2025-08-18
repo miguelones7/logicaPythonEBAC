@@ -1,0 +1,11 @@
+#Acessa a pasta onde quero criar o arquivo
+cd /root/miguel/modulo1/python
+
+#Cria o arquivo de automação
+touch autoCalculadora.sh
+
+#altera as permissões tornando apenas o proprietário com permissões wrx, restante só r
+chmod 744 autoCalculadora.sh
+
+#executa o script automatizado
+./autocalculadora.sh
