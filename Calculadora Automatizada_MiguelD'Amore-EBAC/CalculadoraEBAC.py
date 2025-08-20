@@ -13,11 +13,13 @@ def limparTela():
 def adicao():
   limparTela()
   resultado = 0
+  
   print("\nAdição\n")
+  print("Digite um número (ou 0 para parar)")
 
   while True: #permite ao usuário digitar números até digitar 0, para encerrar
     try: 
-      numero = float(input("\nDigite um número (ou 0 para parar): "))
+      numero = float(input("\n- "))
       if numero == 0:
         break
       
@@ -37,13 +39,15 @@ def adicao():
 # -- Função de Subtração -- #
 def subtracao():
   limparTela()
-  print("\nSubtração\n")
   
+  print("\nSubtração\n")
+  print("Digite um número (ou 0 para parar)")
+
   resultado = None #sem valor inicial
 
   while True: #permite ao usuário digitar números até digitar 0, para encerrar
     try: 
-      numero = float(input("\nDigite um número (ou 0 para parar): "))
+      numero = float(input("\n- "))
       if numero == 0:
         break
       
@@ -73,11 +77,13 @@ def subtracao():
 def multiplicacao():
   limparTela()
   resultado = 1
+
   print("\nMultiplicação\n")
+  print("Digite um número (ou 0 para parar)")
 
   while True: #permite ao usuário digitar números até digitar 0, para encerrar
     try: 
-      numero = float(input("\nDigite um número (ou 0 para parar): "))
+      numero = float(input("\n- "))
       if numero == 0:
         break
       
@@ -98,11 +104,13 @@ def multiplicacao():
 def exponenciacao():
   limparTela()
   expoente = 1
-  print("\nExponenciação\nTodo número elevado à 0 é igual a 1.")
+
+  print("\nExponenciação\nTodo número elevado à 0 é igual a 1.\n\n")
+  print("Digite um número (ou 0 para parar)")
 
   while True: #permite ao usuário digitar números até digitar 0, para encerrar
     try: 
-      base = float(input("\nDigite a base (ou 0 para parar): "))
+      base = float(input("\nDigite a base: "))
       if base == 0:
         break
       expoente = float(input("Digite o expoente: "))
@@ -115,7 +123,7 @@ def exponenciacao():
       time.sleep(2)
       continue
     
-  print(f"\nResultado final da exponenciação = {resultado}")
+  print(f"\nResultado final da multiplicação = {resultado}")
   input("\n\nPressione ENTER para voltar ao menu...")
   menu()
 
@@ -129,7 +137,7 @@ def mediaSimples():
   while True: #permite ao usuário digitar quantos números farão parte da média; 0 ou 1 para encerrar
     try:
       lista = []
-      numero = int(input("\nDigite a quantidade de números ('0' ou '1' para parar): "))
+      numero = int(input("\nDigite a quantidade de números (0 ou 1 para parar): "))
       
     except ValueError:
       print("Inválido. Digite um número inteiro ou casas decimais após ponto[.]")
@@ -162,7 +170,7 @@ def menu():
                                 "3 - Multiplicação\n"
                                 "4 - Exponenciação\n"
                                 "5 - Cálculo de Média Simples\n"
-                                "6 - Sair"
+                                "0 - Sair"
                                 "\n Opção: "))
     except ValueError:
       (print("\nOpção inválida. Digite uma das opções do menu"))
@@ -190,13 +198,13 @@ def menu():
       break
       
     #opção Sair e encerrar o programa após 3s
-    elif menuOpcao == 6:
+    elif menuOpcao == 0:
+      limparTela()
       print("Obrigado por usar a Calculadora do Miguel! Até a próxima!\n\n")
             
       for i in range(3, 0, -1):
         print(f"Saindo em {i}...")
         time.sleep(1)
-	limparTela()
       exit()
 
     else:
